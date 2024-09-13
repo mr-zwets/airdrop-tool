@@ -26,9 +26,9 @@ Configure the wallet holding the tokens and the airdrop parameters in a `.env` f
 ```bash
 SEEDPHRASE = ""
 DERIVATIONPATH = "m/44'/145'/0'/0/0"
-TOKENID_FUNGIBLE = ""
-TOKENID_NFTS = ""
-AIRDOP_AMOUNT_NFT = ""
+TOKENID_FUNGIBLE = "8473d94f604de351cdee3030f6c354d36b257861ad8e95bbc0a06fbab2a2f9cf"
+TOKENID_NFTS = "07275f68d14780c737279898e730cec3a7b189a761caf43b4197b60a7c891a97"
+AIRDOP_AMOUNT_NFT = "1000000"
 ```
 
 There is a boolean in the `airdrop.js` program to enable/disable airdrop to Tapswap addresses.

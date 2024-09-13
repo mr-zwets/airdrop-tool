@@ -2,15 +2,16 @@
   "name": "airdrop-tool",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "aidrop": "tsx airdrop.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",
-    "mainnet-js": "^2.2.9"
+    "mainnet-js": "^2.5.0",
+    "tsx": "^4.19.1"
   }
 }
