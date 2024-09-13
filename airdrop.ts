@@ -12,7 +12,7 @@ const tokenIdFungible = process.env.TOKENID_FUNGIBLE;
 const tokenIdNfts = process.env.TOKENID_NFTS;
 const airdropAmountNft = process.env.AIRDOP_AMOUNT_NFT;
 
-if(!seedphase || !tokenIdFungible || !airdropAmountNft) throw new Error("missing .env variables")
+if(!seedphase || !tokenIdFungible || !tokenIdNfts || !airdropAmountNft) throw new Error("missing .env variables")
 
 // Initialize wallet & check balance
 const wallet = await Wallet.fromSeed(seedphase, derivationPathAddress);
@@ -60,10 +60,10 @@ async function airdropTokens(listRecipients: recipient[]){
 
 async function getListRecipients() {
     // note: chaingraph only returns first 5000 results
-    const resultNftAddresses = await queryNftAddresses(tokenIdNfts,0);
+    const resultNftAddresses = await queryNftAddresses(tokenIdNfts as string,0);
     const nftAddresses = resultNftAddresses.data.output;
 
-    const nftsPerAddress = {};
+    const nftsPerAddress: Record<string, number> = {};
     for(const element of nftAddresses) {
       let address = getAddressFromLockingBytecode(element.locking_bytecode)
       // Logic for P2SH addresses (Tapswap contracts)

@@ -1,4 +1,4 @@
-export async function getTapSwapOrigin(txidParent) {
+export async function getTapSwapOrigin(txidParent:string) {
   const queryParentTxId = `query {
     transaction(
         where: {
@@ -34,7 +34,7 @@ export async function getTapSwapOrigin(txidParent) {
   return result2.data.transaction[0].outputs[+vout].locking_bytecode;
 }
 
-export async function queryNftAddresses(tokenId, offset = 0) {
+export async function queryNftAddresses(tokenId:string, offset = 0) {
     const queryReqTotalSupply = `query {
         output(
           offset: ${offset}
@@ -55,7 +55,7 @@ export async function queryNftAddresses(tokenId, offset = 0) {
     return await queryChainGraph(queryReqTotalSupply, "https://gql.chaingraph.pat.mn/v1/graphql");
 }
 
-async function queryChainGraph(queryReq, chaingraphUrl) {
+async function queryChainGraph(queryReq:string, chaingraphUrl:string) {
     const jsonObj = {
         "operationName": null,
         "variables": {},
