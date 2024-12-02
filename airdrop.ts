@@ -61,7 +61,7 @@ async function airdropTokens(listRecipients: recipient[]){
 async function getListRecipients() {
     // note: chaingraph only returns first 5000 results
     const resultNftAddresses = await queryNftAddresses(tokenIdNfts as string,0);
-    const nftAddresses = resultNftAddresses.data.output;
+    const nftAddresses = resultNftAddresses.output;
 
     const nftsPerAddress: Record<string, number> = {};
     for(const element of nftAddresses) {
