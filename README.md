@@ -31,10 +31,10 @@ TOKENID_NFTS = "07275f68d14780c737279898e730cec3a7b189a761caf43b4197b60a7c891a97
 AIRDOP_AMOUNT_NFT = "1000000"
 ```
 
-There is a boolean in the `airdrop.js` program to enable/disable airdrop to Tapswap addresses.
+There is a boolean in the `airdrop.ts` program to enable/disable airdrop to Tapswap addresses.
 
 Finally, run the airdrop tool with
 
 ```
-node airdrop.js
+npm run airdrop
 ```
